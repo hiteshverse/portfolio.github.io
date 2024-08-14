@@ -21,24 +21,17 @@ Before you begin, ensure you have met the following requirements:
 
 ## Installing vCard
 
-To install **vCard**, follow these steps:
+To install **Portfolio**, follow these steps:
 
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+sudo git clone https://github.com/hiteshverse/portfolio.github.io
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+git clone https://github.com/hiteshverse/portfolio.github.io
 ```
 
-## Contact
-
-If you want to contact me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
-
-## License
-
-MIT
