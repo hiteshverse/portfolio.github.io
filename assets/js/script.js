@@ -94,6 +94,9 @@ const filterFunc = function (selectedValue) {
 
 }
 
+
+
+
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
@@ -154,6 +157,58 @@ for (let i = 0; i < navigationLinks.length; i++) {
         navigationLinks[i].classList.remove("active");
       }
     }
-
   });
 }
+
+const itemS = document.getElementsByClassName('project-item');
+// const wideViewItems = document.getElementsByClassName('wide_view_project');
+
+
+for (let i = 0; i < itemS.length; i++) {
+
+  itemS[i].addEventListener('click', function () {
+
+    const dd = document.getElementsByClassName('wide_view_children')
+
+
+    dd[0].classList.remove('wide_view');
+    dd[1].classList.add('wide_view');
+
+    const input_title = itemS[i].getElementsByClassName('project-title')[0].innerHTML
+    const output_title = document.getElementById('project_title')
+    const title_tag = document.createElement('b')
+    title_tag.innerText = 'Title : '
+    title_tag.innerHTML += `<p> ${input_title} </p>`
+    output_title.innerHTML = '';
+    output_title.appendChild(title_tag)
+
+    const input_description = itemS[i].getElementsByClassName('project-description')[0].innerHTML
+    const output_dscription = document.getElementById('project_description')
+    const description_tag = document.createElement('b')
+    description_tag.innerText = 'Description : '
+    description_tag.innerHTML +=`<p> ${input_description} </p>`
+    output_dscription.innerHTML = '';
+    output_dscription.appendChild(description_tag)
+
+    const input_feature = itemS[i].getElementsByClassName('project-feature')[0].innerHTML
+    const output_feature = document.getElementById('project_feature')
+    const feature_tag = document.createElement('b')
+    feature_tag.innerText = 'KeyFeature : '
+    feature_tag.innerHTML += `<p> ${input_feature} </p>`
+    output_feature.innerHTML = '';
+    output_feature.appendChild(feature_tag)
+    
+    const input_iframe = document.getElementsByClassName('project-video')[0].attributes.getNamedItem('yt_link').value
+    const output_iframe = document.getElementById('project_video');
+    output_iframe.attributes.getNamedItem('src').value = input_iframe
+
+  })
+}
+
+const closeBtn = document.getElementsByClassName('close-wide-view')[0];
+
+closeBtn.addEventListener('click', function () {
+  const dd = document.getElementsByClassName('wide_view_children')
+  dd[0].classList.add('wide_view');
+  dd[1].classList.remove('wide_view');
+})
