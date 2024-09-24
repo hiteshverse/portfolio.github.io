@@ -186,7 +186,7 @@ for (let i = 0; i < itemS.length; i++) {
     const output_dscription = document.getElementById('project_description')
     const description_tag = document.createElement('b')
     description_tag.innerText = 'Description : '
-    description_tag.innerHTML +=`<p> ${input_description} </p>`
+    description_tag.innerHTML += `<p> ${input_description} </p>`
     output_dscription.innerHTML = '';
     output_dscription.appendChild(description_tag)
 
@@ -197,9 +197,11 @@ for (let i = 0; i < itemS.length; i++) {
     feature_tag.innerHTML += `<p> ${input_feature} </p>`
     output_feature.innerHTML = '';
     output_feature.appendChild(feature_tag)
-    
-    const input_iframe = document.getElementsByClassName('project-video')[0].attributes.getNamedItem('yt_link').value
+
+    console.log(document.getElementsByClassName('project-video'));
+    const input_iframe = document.getElementsByClassName('project-video')[i].attributes.getNamedItem('yt_link').value
     const output_iframe = document.getElementById('project_video');
+    output_iframe.attributes.getNamedItem('src').value = '';
     output_iframe.attributes.getNamedItem('src').value = input_iframe
 
   })
